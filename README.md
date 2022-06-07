@@ -17,3 +17,5 @@ I've been a Software Engineering Intern at Pegasystems and Shentel in the past. 
 <a href="https://www.linkedin.com/in/ben-rochford/">LinkedIn</a>
 
 `brochford3 at gatech dot edu`
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
