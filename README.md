@@ -1,3 +1,6 @@
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
 # Hello! :)
 
 I'm an undergraduate Computer Science student at Georgia Tech and an aspiring Computational Social Scientist. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a healthy world.
@@ -17,5 +20,3 @@ I've been a Software Engineering Intern at Pegasystems and Shentel in the past. 
 <a href="https://www.linkedin.com/in/ben-rochford/">LinkedIn</a>
 
 `brochford3 at gatech dot edu`
-
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
