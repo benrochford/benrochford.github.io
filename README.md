@@ -1,6 +1,8 @@
 # Hello! :)
-<img src="/assets/snow.jpeg" width='250' height='250' alt='Me' style='float:right; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
+
 I'm an undergraduate Computer Science student at Georgia Tech and an aspiring Computational Social Scientist. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a healthy world.
+
+<img src="/assets/snow.jpeg" width='250' height='250' alt='Me' style='float:center; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
 
 I do research at the <a href="https://socweb.cc.gatech.edu">Social Dynamics and Wellbeing Lab</a> under <a href="http://www.munmund.net">Professor Munmun De Choudhury</a>. Currently, I'm exploring disparities in mental health narratives using search engine data.
 
