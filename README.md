@@ -1,4 +1,4 @@
-<img src="/assets/snow.jpeg" width='250' height='250' align='right' alt='Me'>
+<img src="/assets/snow.jpeg" width='250' height='250' alt='Me' style='float:right; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
 # Hello! :)
 
 I'm an undergraduate Computer Science student at Georgia Tech and an aspiring Computational Social Scientist. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a healthy world.
