@@ -2,7 +2,7 @@ theme: jekyll-theme-hacker
 title: Ben Rochford
 description: You're surfing the Ben-ternet!
 
-avatar: "/assets/gbacat.png"
+avatar: "./assets/gbacat.png"
 round-avatar: false
 
 social-network-links:

@@ -2,7 +2,7 @@
 
 I'm an undergraduate Computer Science student at Georgia Tech and an aspiring Computational Social Scientist. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a healthy world.
 
-![Me](./assets/snow.jpeg)
+![Me](./assets/snow.jpeg){: max-width="250" }
 
 I do research at the <a href="https://socweb.cc.gatech.edu/">Social Dynamics and Wellbeing Lab</a> under <a href="http://www.munmund.net/index.html/">Professor Munmun De Choudhury</a>. Currently, I'm exploring disparities in mental health narratives using search engine data.
 
