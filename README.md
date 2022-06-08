@@ -13,7 +13,7 @@ I do research at the <a href="https://socweb.cc.gatech.edu">Social Dynamics and 
 
 
 ### Background
-I've been a Software Engineering Intern at Pegasystems and Shentel in the past. When I'm not in Atlanta, I call historic Williamsburg Virgnia my home. I play flute, piano, percussion, and produce electronic music. I am an Eagle Scout, and a leader on campus in Marching Band and at The Wesley Foundation.
+I've been a Software Engineering Intern at Pegasystems and Shentel in the past. When I'm not in Atlanta, I call historic Williamsburg Virginia my home. I play flute, piano, percussion, and produce electronic music. I am an Eagle Scout, and a leader on campus in Marching Band and at The Wesley Foundation.
 
 
 ### Links + Contact
