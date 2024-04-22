@@ -3,7 +3,7 @@
 </head>
 # Hello! :)
 
-I'm a first-year Sociology PhD student at Duke and an aspiring Computational Social Scientist. I did my undergrad in Computer Science at Georgia Tech. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a world that is less divided.
+I'm a Sociology PhD student at Duke and an aspiring Computational Social Scientist. I did my undergrad in Computer Science at Georgia Tech. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a world that is less divided.
 
 <div style="text-align: center">
     <img src="/assets/snow.jpeg" width='250' height='250' alt='Me' style='border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
