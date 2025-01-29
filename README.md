@@ -1,6 +1,13 @@
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 </head>
+
+<div style="text-align: left; margin: 20px 0; font-size: 18px;">
+    <a href="{{ site.baseurl }}/" style="font-weight: bold;">Home</a> 
+    | 
+    <a href="{{ site.baseurl }}/publications">Publications</a>
+</div>
+
 # Hello! :)
 
 I'm a Sociology PhD student at Duke and an aspiring Computational Social Scientist. I did my undergrad in Computer Science at Georgia Tech. I want to investigate the cultural impacts of online social systems, and find ways to build technologies that facilitate healthy individual experiences and a world that is less divided.
