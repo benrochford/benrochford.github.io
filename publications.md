@@ -4,7 +4,7 @@
 
 # My Work
 
-</br></br>
+     
 
 ## Publications
 
@@ -12,7 +12,7 @@ Pendse, S., **Rochford, B.**, Kumar, N., & De Choudhury, M. (2024). The Role of 
 
 **Rochford, B.**, Pendse, S., Kumar, N., & De Choudhury, M. (2023). Leveraging Symptom Search Data to Understand Disparities in US Mental Health Care: Demographic Analysis of Search Engine Trace Data. *JMIR Mental Health, 10*, e43253.
 
-</br></br>
+     
 
 ## Works in Progress
 
@@ -26,7 +26,7 @@ Co-authors: Cathy Lee, Michelle Qiu, Alexander Volfovsky, Sunshine Hillygus, Chr
 Co-authors: Sachin Pendse, Neha Kumar, Munmun De Choudhury
 *Social Dynamics and Well-being Lab, Georgia Institute of Technology*
 
-</br></br>
+     
 
 ## Presentations
 
