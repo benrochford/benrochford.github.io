@@ -38,6 +38,13 @@
             position: fixed;
             height: 100vh;
             z-index: 10;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-content {
+            flex: 1;
         }
         
         .content {
@@ -48,6 +55,17 @@
         
         .dashboard-title {
             margin-top: 0;
+            padding-bottom: 5px;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .attribution {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-style: normal;
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
         }
@@ -473,19 +491,6 @@
             text-decoration: underline;
         }
 
-        .attribution {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-            text-align: center;
-            font-style: normal;
-            padding: 0 10px;
-
-            position: absolute;
-            bottom: 50px;
-            left: 0;
-            right: 0;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
@@ -493,6 +498,10 @@
         <div class="sidebar">
             <h2 class="dashboard-title">Bot or Not: Topic Networks</h2>
             
+            <div class="attribution">
+                Rochford et al. (2025)
+            </div>
+
             <div class="nav-category">
                 <div class="nav-category-title" data-target="home">Home</div>
             </div>
@@ -576,9 +585,6 @@
                 <div class="nav-category-title" data-target="metrics-explained">Network Metrics Explained</div>
             </div>
 
-            <div class="attribution">
-                Rochford et al. (2025)
-            </div>
         </div>
         
         <div class="content">
