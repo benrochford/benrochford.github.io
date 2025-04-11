@@ -1,0 +1,11 @@
+Top by Frequency,Top by Degree Centrality,Top by Betweenness Centrality,Top by Closeness Centrality,Top by Eigenvector Centrality
+Too generic,Too scripted,Too scripted,Too scripted,Too scripted
+Grammar,Grammar,Off topic comments,Grammar,Grammar
+Too scripted,Too generic,Grammar,Too generic,Too generic
+Off topic comments,Word choice,Sentence length,Tone,Tone
+Word choice,Tone,Word choice,Sentence length,Word choice
+None,Off topic comments,Tone,Off topic comments,Image usage
+Tone,Sentence length,Too generic,Word choice,Sentence length
+Personalization,Image usage,Interaction with others,Image usage,Personalization
+Interaction with others,Personalization,Personalization,Interaction with others,Interaction with others
+Sentence length,Interaction with others,Emoji usage,Personalization,Off topic comments

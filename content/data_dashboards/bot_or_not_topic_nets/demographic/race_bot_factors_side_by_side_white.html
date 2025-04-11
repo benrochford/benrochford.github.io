@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#6929c4", "id": "Too scripted", "label": "Too scripted", "shape": "dot", "size": 30.923762100945137, "title": "Too scripted: 104 occurrences"}, {"color": "#6929c4", "id": "None", "label": "None", "shape": "dot", "size": 27.2583076070073, "title": "None: 56 occurrences"}, {"color": "#6929c4", "id": "Too generic", "label": "Too generic", "shape": "dot", "size": 33.375570198161796, "title": "Too generic: 157 occurrences"}, {"color": "#6929c4", "id": "Interaction with others", "label": "Interaction with others", "shape": "dot", "size": 26.590953796345953, "title": "Interaction with others: 50 occurrences"}, {"color": "#6929c4", "id": "Off topic comments", "label": "Off topic comments", "shape": "dot", "size": 30.690723101047556, "title": "Off topic comments: 100 occurrences"}, {"color": "#6929c4", "id": "Repetition", "label": "Repetition", "shape": "dot", "size": 20.66663387499864, "title": "Repetition: 18 occurrences"}, {"color": "#6929c4", "id": "Grammar", "label": "Grammar", "shape": "dot", "size": 31.417190690366972, "title": "Grammar: 113 occurrences"}, {"color": "#6929c4", "id": "Typing habits", "label": "Typing habits", "shape": "dot", "size": 20.34223054737699, "title": "Typing habits: 17 occurrences"}, {"color": "#6929c4", "id": "Word choice", "label": "Word choice", "shape": "dot", "size": 29.86402088686924, "title": "Word choice: 87 occurrences"}, {"color": "#6929c4", "id": "Personalization", "label": "Personalization", "shape": "dot", "size": 28.40463902758356, "title": "Personalization: 68 occurrences"}, {"color": "#6929c4", "id": "Tone", "label": "Tone", "shape": "dot", "size": 26.933904279385647, "title": "Tone: 53 occurrences"}, {"color": "#6929c4", "id": "Image usage", "label": "Image usage", "shape": "dot", "size": 23.979045368798882, "title": "Image usage: 32 occurrences"}, {"color": "#6929c4", "id": "Too inflammatory", "label": "Too inflammatory", "shape": "dot", "size": 20.66663387499864, "title": "Too inflammatory: 18 occurrences"}, {"color": "#6929c4", "id": "Emoji usage", "label": "Emoji usage", "shape": "dot", "size": 21.546254720149896, "title": "Emoji usage: 21 occurrences"}, {"color": "#6929c4", "id": "Too factual", "label": "Too factual", "shape": "dot", "size": 16.183347464017316, "title": "Too factual: 8 occurrences"}, {"color": "#6929c4", "id": "Too realistic", "label": "Too realistic", "shape": "dot", "size": 18.389696144769218, "title": "Too realistic: 12 occurrences"}, {"color": "#6929c4", "id": "Too agreeable", "label": "Too agreeable", "shape": "dot", "size": 14.675460894331877, "title": "Too agreeable: 6 occurrences"}, {"color": "#6929c4", "id": "Too biased", "label": "Too biased", "shape": "dot", "size": 7.158883083359672, "title": "Too biased: 1 occurrences"}, {"color": "#6929c4", "id": "Too exaggerated", "label": "Too exaggerated", "shape": "dot", "size": 7.158883083359672, "title": "Too exaggerated: 1 occurrences"}, {"color": "#6929c4", "id": "Sentence length", "label": "Sentence length", "shape": "dot", "size": 22.313254949209202, "title": "Sentence length: 24 occurrences"}, {"color": "#6929c4", "id": "Too formal", "label": "Too formal", "shape": "dot", "size": 7.158883083359672, "title": "Too formal: 1 occurrences"}, {"color": "#6929c4", "id": "Too perfect", "label": "Too perfect", "shape": "dot", "size": 7.158883083359672, "title": "Too perfect: 1 occurrences"}, {"color": "#6929c4", "id": "Emotion", "label": "Emotion", "shape": "dot", "size": 7.158883083359672, "title": "Emotion: 1 occurrences"}, {"color": "#6929c4", "id": "Too outrageous", "label": "Too outrageous", "shape": "dot", "size": 7.158883083359672, "title": "Too outrageous: 1 occurrences"}, {"color": "#6929c4", "id": "Too specific", "label": "Too specific", "shape": "dot", "size": 9.591673732008658, "title": "Too specific: 2 occurrences"}, {"color": "#6929c4", "id": "Too detailed", "label": "Too detailed", "shape": "dot", "size": 7.158883083359672, "title": "Too detailed: 1 occurrences"}, {"color": "#6929c4", "id": "Too negative", "label": "Too negative", "shape": "dot", "size": 7.158883083359672, "title": "Too negative: 1 occurrences"}, {"color": "#6929c4", "id": "Too emotional", "label": "Too emotional", "shape": "dot", "size": 7.158883083359672, "title": "Too emotional: 1 occurrences"}, {"color": "#6929c4", "id": "Too unrealistic", "label": "Too unrealistic", "shape": "dot", "size": 7.158883083359672, "title": "Too unrealistic: 1 occurrences"}, {"color": "#6929c4", "id": "Too extreme", "label": "Too extreme", "shape": "dot", "size": 7.158883083359672, "title": "Too extreme: 1 occurrences"}]);
+                  edges = new vis.DataSet([{"from": "Too scripted", "title": "Co-occurs 25 times", "to": "Too generic", "value": 3.0806675766150375}, {"from": "Too scripted", "title": "Co-occurs 3 times", "to": "Too inflammatory", "value": 1.7704060527839234}, {"from": "Too scripted", "title": "Co-occurs 3 times", "to": "Typing habits", "value": 1.7704060527839234}, {"from": "Too scripted", "title": "Co-occurs 3 times", "to": "Repetition", "value": 1.7704060527839234}, {"from": "Too scripted", "title": "Co-occurs 7 times", "to": "Tone", "value": 2.255609079175885}, {"from": "Too scripted", "title": "Co-occurs 13 times", "to": "Grammar", "value": 2.6473401307306808}, {"from": "Too scripted", "title": "Co-occurs 9 times", "to": "Off topic comments", "value": 2.411809565095832}, {"from": "Too scripted", "title": "Co-occurs 6 times", "to": "Interaction with others", "value": 2.1621371043387194}, {"from": "Too scripted", "title": "Co-occurs 4 times", "to": "Personalization", "value": 1.9266065387038702}, {"from": "Too scripted", "title": "Co-occurs 1 times", "to": "Too perfect", "value": 1.2852030263919616}, {"from": "Too scripted", "title": "Co-occurs 1 times", "to": "Emotion", "value": 1.2852030263919616}, {"from": "Too scripted", "title": "Co-occurs 1 times", "to": "Too outrageous", "value": 1.2852030263919616}, {"from": "Too scripted", "title": "Co-occurs 4 times", "to": "Word choice", "value": 1.9266065387038702}, {"from": "Too scripted", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}, {"from": "Too scripted", "title": "Co-occurs 2 times", "to": "Image usage", "value": 1.569028602067677}, {"from": "Too scripted", "title": "Co-occurs 1 times", "to": "Emoji usage", "value": 1.2852030263919616}, {"from": "Too generic", "title": "Co-occurs 11 times", "to": "Word choice", "value": 2.5394346548516005}, {"from": "Too generic", "title": "Co-occurs 6 times", "to": "Repetition", "value": 2.1621371043387194}, {"from": "Too generic", "title": "Co-occurs 27 times", "to": "Off topic comments", "value": 3.132543157122643}, {"from": "Too generic", "title": "Co-occurs 2 times", "to": "Too inflammatory", "value": 1.569028602067677}, {"from": "Too generic", "title": "Co-occurs 1 times", "to": "Typing habits", "value": 1.2852030263919616}, {"from": "Too generic", "title": "Co-occurs 21 times", "to": "Grammar", "value": 2.9637297173508212}, {"from": "Too generic", "title": "Co-occurs 11 times", "to": "Tone", "value": 2.5394346548516005}, {"from": "Too generic", "title": "Co-occurs 7 times", "to": "Image usage", "value": 2.255609079175885}, {"from": "Too generic", "title": "Co-occurs 11 times", "to": "Interaction with others", "value": 2.5394346548516005}, {"from": "Too generic", "title": "Co-occurs 11 times", "to": "Personalization", "value": 2.5394346548516005}, {"from": "Too generic", "title": "Co-occurs 9 times", "to": "Sentence length", "value": 2.411809565095832}, {"from": "Too generic", "title": "Co-occurs 2 times", "to": "Emoji usage", "value": 1.569028602067677}, {"from": "Too generic", "title": "Co-occurs 2 times", "to": "Too agreeable", "value": 1.569028602067677}, {"from": "Too generic", "title": "Co-occurs 4 times", "to": "Too factual", "value": 1.9266065387038702}, {"from": "Interaction with others", "title": "Co-occurs 9 times", "to": "Off topic comments", "value": 2.411809565095832}, {"from": "Interaction with others", "title": "Co-occurs 1 times", "to": "Emoji usage", "value": 1.2852030263919616}, {"from": "Interaction with others", "title": "Co-occurs 1 times", "to": "Typing habits", "value": 1.2852030263919616}, {"from": "Interaction with others", "title": "Co-occurs 2 times", "to": "Tone", "value": 1.569028602067677}, {"from": "Interaction with others", "title": "Co-occurs 2 times", "to": "Personalization", "value": 1.569028602067677}, {"from": "Interaction with others", "title": "Co-occurs 2 times", "to": "Image usage", "value": 1.569028602067677}, {"from": "Interaction with others", "title": "Co-occurs 1 times", "to": "Grammar", "value": 1.2852030263919616}, {"from": "Interaction with others", "title": "Co-occurs 1 times", "to": "Word choice", "value": 1.2852030263919616}, {"from": "Off topic comments", "title": "Co-occurs 3 times", "to": "Word choice", "value": 1.7704060527839234}, {"from": "Off topic comments", "title": "Co-occurs 10 times", "to": "Grammar", "value": 2.4785266909588595}, {"from": "Off topic comments", "title": "Co-occurs 4 times", "to": "Tone", "value": 1.9266065387038702}, {"from": "Off topic comments", "title": "Co-occurs 2 times", "to": "Too inflammatory", "value": 1.569028602067677}, {"from": "Off topic comments", "title": "Co-occurs 3 times", "to": "Personalization", "value": 1.7704060527839234}, {"from": "Off topic comments", "title": "Co-occurs 1 times", "to": "Too exaggerated", "value": 1.2852030263919616}, {"from": "Off topic comments", "title": "Co-occurs 1 times", "to": "Too specific", "value": 1.2852030263919616}, {"from": "Off topic comments", "title": "Co-occurs 1 times", "to": "Typing habits", "value": 1.2852030263919616}, {"from": "Off topic comments", "title": "Co-occurs 3 times", "to": "Image usage", "value": 1.7704060527839234}, {"from": "Off topic comments", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}, {"from": "Repetition", "title": "Co-occurs 3 times", "to": "Word choice", "value": 1.7704060527839234}, {"from": "Repetition", "title": "Co-occurs 2 times", "to": "Grammar", "value": 1.569028602067677}, {"from": "Repetition", "title": "Co-occurs 3 times", "to": "Personalization", "value": 1.7704060527839234}, {"from": "Grammar", "title": "Co-occurs 10 times", "to": "Tone", "value": 2.4785266909588595}, {"from": "Grammar", "title": "Co-occurs 5 times", "to": "Emoji usage", "value": 2.0542316284596387}, {"from": "Grammar", "title": "Co-occurs 22 times", "to": "Word choice", "value": 2.9948459511504044}, {"from": "Grammar", "title": "Co-occurs 8 times", "to": "Sentence length", "value": 2.3380572041353536}, {"from": "Grammar", "title": "Co-occurs 1 times", "to": "Too factual", "value": 1.2852030263919616}, {"from": "Grammar", "title": "Co-occurs 3 times", "to": "Too realistic", "value": 1.7704060527839234}, {"from": "Grammar", "title": "Co-occurs 4 times", "to": "Image usage", "value": 1.9266065387038702}, {"from": "Grammar", "title": "Co-occurs 8 times", "to": "Personalization", "value": 2.3380572041353536}, {"from": "Grammar", "title": "Co-occurs 1 times", "to": "Too agreeable", "value": 1.2852030263919616}, {"from": "Grammar", "title": "Co-occurs 1 times", "to": "Typing habits", "value": 1.2852030263919616}, {"from": "Typing habits", "title": "Co-occurs 1 times", "to": "Too inflammatory", "value": 1.2852030263919616}, {"from": "Typing habits", "title": "Co-occurs 1 times", "to": "Image usage", "value": 1.2852030263919616}, {"from": "Typing habits", "title": "Co-occurs 1 times", "to": "Personalization", "value": 1.2852030263919616}, {"from": "Typing habits", "title": "Co-occurs 1 times", "to": "Emoji usage", "value": 1.2852030263919616}, {"from": "Typing habits", "title": "Co-occurs 1 times", "to": "Word choice", "value": 1.2852030263919616}, {"from": "Word choice", "title": "Co-occurs 4 times", "to": "Personalization", "value": 1.9266065387038702}, {"from": "Word choice", "title": "Co-occurs 4 times", "to": "Emoji usage", "value": 1.9266065387038702}, {"from": "Word choice", "title": "Co-occurs 10 times", "to": "Tone", "value": 2.4785266909588595}, {"from": "Word choice", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}, {"from": "Word choice", "title": "Co-occurs 4 times", "to": "Image usage", "value": 1.9266065387038702}, {"from": "Word choice", "title": "Co-occurs 2 times", "to": "Too realistic", "value": 1.569028602067677}, {"from": "Word choice", "title": "Co-occurs 1 times", "to": "Too inflammatory", "value": 1.2852030263919616}, {"from": "Personalization", "title": "Co-occurs 2 times", "to": "Too factual", "value": 1.569028602067677}, {"from": "Personalization", "title": "Co-occurs 2 times", "to": "Image usage", "value": 1.569028602067677}, {"from": "Personalization", "title": "Co-occurs 3 times", "to": "Tone", "value": 1.7704060527839234}, {"from": "Personalization", "title": "Co-occurs 1 times", "to": "Too agreeable", "value": 1.2852030263919616}, {"from": "Tone", "title": "Co-occurs 4 times", "to": "Image usage", "value": 1.9266065387038702}, {"from": "Tone", "title": "Co-occurs 2 times", "to": "Sentence length", "value": 1.569028602067677}, {"from": "Tone", "title": "Co-occurs 1 times", "to": "Too agreeable", "value": 1.2852030263919616}, {"from": "Tone", "title": "Co-occurs 1 times", "to": "Too factual", "value": 1.2852030263919616}, {"from": "Image usage", "title": "Co-occurs 2 times", "to": "Emoji usage", "value": 1.569028602067677}, {"from": "Image usage", "title": "Co-occurs 2 times", "to": "Sentence length", "value": 1.569028602067677}, {"from": "Image usage", "title": "Co-occurs 1 times", "to": "Too factual", "value": 1.2852030263919616}, {"from": "Too inflammatory", "title": "Co-occurs 1 times", "to": "Too specific", "value": 1.2852030263919616}, {"from": "Too inflammatory", "title": "Co-occurs 1 times", "to": "Emoji usage", "value": 1.2852030263919616}, {"from": "Emoji usage", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}, {"from": "Too factual", "title": "Co-occurs 1 times", "to": "Too realistic", "value": 1.2852030263919616}, {"from": "Too factual", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}, {"from": "Too realistic", "title": "Co-occurs 1 times", "to": "Sentence length", "value": 1.2852030263919616}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"font": {"size": 16, "face": "Tahoma", "strokeWidth": 2, "strokeColor": "#ffffff"}, "borderWidth": 2, "borderWidthSelected": 4, "shadow": true}, "edges": {"color": {"inherit": false, "opacity": 0.6}, "smooth": {"type": "continuous", "forceDirection": "none"}, "arrows": {"to": {"enabled": false}, "from": {"enabled": false}}}, "physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -4000, "centralGravity": 0.3, "springLength": 200, "springConstant": 0.05, "damping": 0.09, "avoidOverlap": 0.8}, "maxVelocity": 50, "minVelocity": 0.75, "solver": "barnesHut"}, "interaction": {"hover": true, "navigationButtons": true, "multiselect": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

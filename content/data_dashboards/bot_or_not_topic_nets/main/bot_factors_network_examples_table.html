@@ -1,0 +1,557 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Topic Examples: Bot Factors Topics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1, h2 {
+                color: #2c3e50;
+            }
+            h3 {
+                cursor: pointer;
+                background-color: #f8f9fa;
+                padding: 10px;
+                border-radius: 5px;
+                border-left: 5px solid #3498db;
+                margin-top: 20px;
+            }
+            h3:hover {
+                background-color: #eee;
+            }
+            .examples {
+                display: none;
+                margin-left: 20px;
+                padding: 10px;
+                border-left: 3px solid #ddd;
+            }
+            .example {
+                background-color: #f9f9f9;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                font-style: italic;
+            }
+            .show {
+                display: block;
+            }
+            .topic-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .count-badge {
+                background-color: #3498db;
+                color: white;
+                border-radius: 20px;
+                padding: 3px 10px;
+                font-size: 0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Topic Examples: Bot Factors Topics</h1>
+        <p>This page shows examples of which responses contained each topic. Click on a topic to show/hide examples.</p>
+        
+        <div class="topics-container">
+    
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too generic</span>
+                <span class="count-badge">275 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #2</div>
+            
+                <div class="example">Response #4</div>
+            
+                <div class="example">Response #6</div>
+            
+                <div class="example">Response #12</div>
+            
+                <div class="example">Response #20</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Off topic comments</span>
+                <span class="count-badge">177 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #3</div>
+            
+                <div class="example">Response #17</div>
+            
+                <div class="example">Response #29</div>
+            
+                <div class="example">Response #53</div>
+            
+                <div class="example">Response #54</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Grammar</span>
+                <span class="count-badge">173 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #38</div>
+            
+                <div class="example">Response #50</div>
+            
+                <div class="example">Response #67</div>
+            
+                <div class="example">Response #71</div>
+            
+                <div class="example">Response #93</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too scripted</span>
+                <span class="count-badge">159 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #1</div>
+            
+                <div class="example">Response #10</div>
+            
+                <div class="example">Response #34</div>
+            
+                <div class="example">Response #48</div>
+            
+                <div class="example">Response #58</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Word choice</span>
+                <span class="count-badge">142 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #6</div>
+            
+                <div class="example">Response #13</div>
+            
+                <div class="example">Response #14</div>
+            
+                <div class="example">Response #15</div>
+            
+                <div class="example">Response #19</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>None</span>
+                <span class="count-badge">123 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #9</div>
+            
+                <div class="example">Response #16</div>
+            
+                <div class="example">Response #18</div>
+            
+                <div class="example">Response #23</div>
+            
+                <div class="example">Response #27</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Personalization</span>
+                <span class="count-badge">110 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #5</div>
+            
+                <div class="example">Response #11</div>
+            
+                <div class="example">Response #12</div>
+            
+                <div class="example">Response #45</div>
+            
+                <div class="example">Response #60</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Tone</span>
+                <span class="count-badge">104 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #19</div>
+            
+                <div class="example">Response #20</div>
+            
+                <div class="example">Response #59</div>
+            
+                <div class="example">Response #67</div>
+            
+                <div class="example">Response #73</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Interaction with others</span>
+                <span class="count-badge">98 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #7</div>
+            
+                <div class="example">Response #25</div>
+            
+                <div class="example">Response #28</div>
+            
+                <div class="example">Response #29</div>
+            
+                <div class="example">Response #30</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Image usage</span>
+                <span class="count-badge">55 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #68</div>
+            
+                <div class="example">Response #115</div>
+            
+                <div class="example">Response #137</div>
+            
+                <div class="example">Response #187</div>
+            
+                <div class="example">Response #196</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Sentence length</span>
+                <span class="count-badge">54 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #12</div>
+            
+                <div class="example">Response #19</div>
+            
+                <div class="example">Response #91</div>
+            
+                <div class="example">Response #103</div>
+            
+                <div class="example">Response #108</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too realistic</span>
+                <span class="count-badge">35 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #8</div>
+            
+                <div class="example">Response #24</div>
+            
+                <div class="example">Response #36</div>
+            
+                <div class="example">Response #97</div>
+            
+                <div class="example">Response #147</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Typing habits</span>
+                <span class="count-badge">34 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #3</div>
+            
+                <div class="example">Response #12</div>
+            
+                <div class="example">Response #39</div>
+            
+                <div class="example">Response #69</div>
+            
+                <div class="example">Response #87</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too inflammatory</span>
+                <span class="count-badge">29 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #69</div>
+            
+                <div class="example">Response #75</div>
+            
+                <div class="example">Response #151</div>
+            
+                <div class="example">Response #223</div>
+            
+                <div class="example">Response #239</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Emoji usage</span>
+                <span class="count-badge">29 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #77</div>
+            
+                <div class="example">Response #81</div>
+            
+                <div class="example">Response #96</div>
+            
+                <div class="example">Response #105</div>
+            
+                <div class="example">Response #108</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Repetition</span>
+                <span class="count-badge">23 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #32</div>
+            
+                <div class="example">Response #49</div>
+            
+                <div class="example">Response #50</div>
+            
+                <div class="example">Response #56</div>
+            
+                <div class="example">Response #57</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too factual</span>
+                <span class="count-badge">17 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #20</div>
+            
+                <div class="example">Response #82</div>
+            
+                <div class="example">Response #149</div>
+            
+                <div class="example">Response #287</div>
+            
+                <div class="example">Response #437</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too agreeable</span>
+                <span class="count-badge">11 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #12</div>
+            
+                <div class="example">Response #123</div>
+            
+                <div class="example">Response #139</div>
+            
+                <div class="example">Response #367</div>
+            
+                <div class="example">Response #380</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too formal</span>
+                <span class="count-badge">3 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #255</div>
+            
+                <div class="example">Response #967</div>
+            
+                <div class="example">Response #1092</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too specific</span>
+                <span class="count-badge">2 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #401</div>
+            
+                <div class="example">Response #696</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too biased</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #140</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too exaggerated</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #204</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too perfect</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #332</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Emotion</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #363</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too outrageous</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #376</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too detailed</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #432</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too negative</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #436</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too political</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #487</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too emotional</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #551</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too unrealistic</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #665</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too aggressive</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #915</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Lack of emotions</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #960</div>
+            
+            </div>
+        
+            <h3 class="topic-header" onclick="toggleExamples(this)">
+                <span>Too extreme</span>
+                <span class="count-badge">1 occurrences</span>
+            </h3>
+            <div class="examples">
+        
+                <div class="example">Response #1161</div>
+            
+            </div>
+        
+        </div>
+        
+        <script>
+            function toggleExamples(element) {
+                const examples = element.nextElementSibling;
+                examples.classList.toggle('show');
+            }
+        </script>
+    </body>
+    </html>
+    

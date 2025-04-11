@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#6929c4", "id": "Economy", "label": "Economy", "shape": "dot", "size": 18.83434397769155, "title": "Economy: 13 occurrences"}, {"color": "#6929c4", "id": "Misinformation", "label": "Misinformation", "shape": "dot", "size": 40.51142329899533, "title": "Misinformation: 518 occurrences"}, {"color": "#6929c4", "id": "Decreasing human connection", "label": "Decreasing human connection", "shape": "dot", "size": 25.839974938621914, "title": "Decreasing human connection: 44 occurrences"}, {"color": "#6929c4", "id": "Job displacement", "label": "Job displacement", "shape": "dot", "size": 34.22404012246077, "title": "Job displacement: 181 occurrences"}, {"color": "#6929c4", "id": "Deepfakes", "label": "Deepfakes", "shape": "dot", "size": 32.73496234560756, "title": "Deepfakes: 141 occurrences"}, {"color": "#6929c4", "id": "Bias", "label": "Bias", "shape": "dot", "size": 27.2583076070073, "title": "Bias: 56 occurrences"}, {"color": "#6929c4", "id": "Privacy", "label": "Privacy", "shape": "dot", "size": 27.465224663434316, "title": "Privacy: 58 occurrences"}, {"color": "#6929c4", "id": "No concerns", "label": "No concerns", "shape": "dot", "size": 34.48214443296291, "title": "No concerns: 189 occurrences"}, {"color": "#6929c4", "id": "Bad actors", "label": "Bad actors", "shape": "dot", "size": 30.690723101047556, "title": "Bad actors: 100 occurrences"}, {"color": "#6929c4", "id": "Regulation", "label": "Regulation", "shape": "dot", "size": 23.203774979918844, "title": "Regulation: 28 occurrences"}, {"color": "#6929c4", "id": "Security", "label": "Security", "shape": "dot", "size": 24.825516958358314, "title": "Security: 37 occurrences"}, {"color": "#6929c4", "id": "Immigration", "label": "Immigration", "shape": "dot", "size": 12.656627474604601, "title": "Immigration: 4 occurrences"}]);
+                  edges = new vis.DataSet([{"from": "Economy", "title": "Co-occurs 2 times", "to": "Misinformation", "value": 1.569028602067677}, {"from": "Economy", "title": "Co-occurs 7 times", "to": "Job displacement", "value": 2.255609079175885}, {"from": "Misinformation", "title": "Co-occurs 77 times", "to": "Deepfakes", "value": 3.8496961786827137}, {"from": "Misinformation", "title": "Co-occurs 28 times", "to": "Bias", "value": 3.1571070809905315}, {"from": "Misinformation", "title": "Co-occurs 15 times", "to": "Privacy", "value": 2.740812105567847}, {"from": "Misinformation", "title": "Co-occurs 8 times", "to": "Regulation", "value": 2.3380572041353536}, {"from": "Misinformation", "title": "Co-occurs 51 times", "to": "Bad actors", "value": 3.5658706030069993}, {"from": "Misinformation", "title": "Co-occurs 38 times", "to": "Job displacement", "value": 3.364493152290752}, {"from": "Misinformation", "title": "Co-occurs 5 times", "to": "Decreasing human connection", "value": 2.0542316284596387}, {"from": "Misinformation", "title": "Co-occurs 9 times", "to": "Security", "value": 2.411809565095832}, {"from": "Decreasing human connection", "title": "Co-occurs 8 times", "to": "Job displacement", "value": 2.3380572041353536}, {"from": "Decreasing human connection", "title": "Co-occurs 2 times", "to": "Deepfakes", "value": 1.569028602067677}, {"from": "Job displacement", "title": "Co-occurs 14 times", "to": "Deepfakes", "value": 2.6956351407715466}, {"from": "Job displacement", "title": "Co-occurs 14 times", "to": "Privacy", "value": 2.6956351407715466}, {"from": "Job displacement", "title": "Co-occurs 7 times", "to": "Bad actors", "value": 2.255609079175885}, {"from": "Job displacement", "title": "Co-occurs 4 times", "to": "Security", "value": 1.9266065387038702}, {"from": "Job displacement", "title": "Co-occurs 13 times", "to": "Bias", "value": 2.6473401307306808}, {"from": "Job displacement", "title": "Co-occurs 4 times", "to": "Regulation", "value": 1.9266065387038702}, {"from": "Deepfakes", "title": "Co-occurs 5 times", "to": "Bias", "value": 2.0542316284596387}, {"from": "Deepfakes", "title": "Co-occurs 9 times", "to": "Privacy", "value": 2.411809565095832}, {"from": "Deepfakes", "title": "Co-occurs 3 times", "to": "Regulation", "value": 1.7704060527839234}, {"from": "Deepfakes", "title": "Co-occurs 7 times", "to": "Security", "value": 2.255609079175885}, {"from": "Deepfakes", "title": "Co-occurs 24 times", "to": "Bad actors", "value": 3.05321307740774}, {"from": "Bias", "title": "Co-occurs 9 times", "to": "Privacy", "value": 2.411809565095832}, {"from": "Bias", "title": "Co-occurs 3 times", "to": "Bad actors", "value": 1.7704060527839234}, {"from": "Bias", "title": "Co-occurs 3 times", "to": "Regulation", "value": 1.7704060527839234}, {"from": "Privacy", "title": "Co-occurs 7 times", "to": "Security", "value": 2.255609079175885}, {"from": "Privacy", "title": "Co-occurs 6 times", "to": "Bad actors", "value": 2.1621371043387194}, {"from": "Privacy", "title": "Co-occurs 2 times", "to": "Regulation", "value": 1.569028602067677}, {"from": "Bad actors", "title": "Co-occurs 7 times", "to": "Regulation", "value": 2.255609079175885}, {"from": "Bad actors", "title": "Co-occurs 7 times", "to": "Security", "value": 2.255609079175885}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"nodes": {"font": {"size": 16, "face": "Tahoma", "strokeWidth": 2, "strokeColor": "#ffffff"}, "borderWidth": 2, "borderWidthSelected": 4, "shadow": true}, "edges": {"color": {"inherit": false, "opacity": 0.6}, "smooth": {"type": "continuous", "forceDirection": "none"}, "arrows": {"to": {"enabled": false}, "from": {"enabled": false}}}, "physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -4000, "centralGravity": 0.3, "springLength": 200, "springConstant": 0.05, "damping": 0.09, "avoidOverlap": 0.8}, "maxVelocity": 50, "minVelocity": 0.75, "solver": "barnesHut"}, "interaction": {"hover": true, "navigationButtons": true, "multiselect": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

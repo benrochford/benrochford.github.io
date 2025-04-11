@@ -1,0 +1,11 @@
+Top by Frequency,Top by Degree Centrality,Top by Betweenness Centrality,Top by Closeness Centrality,Top by Eigenvector Centrality
+Misinformation,Job displacement,Deepfakes,Job displacement,Privacy
+Job displacement,Deepfakes,Job displacement,Deepfakes,Job displacement
+No concerns,Privacy,Privacy,Privacy,Deepfakes
+Deepfakes,Misinformation,Bad actors,Misinformation,Misinformation
+Bad actors,Bad actors,Misinformation,Bad actors,Bad actors
+Decreasing human connection,Bias,Security,Bias,Bias
+Bias,Security,No concerns,Security,Regulation
+Privacy,Regulation,Decreasing human connection,Regulation,Security
+Security,Decreasing human connection,Bias,Decreasing human connection,Decreasing human connection
+Regulation,Economy,Regulation,Economy,Economy
