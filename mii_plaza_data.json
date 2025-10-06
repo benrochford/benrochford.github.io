@@ -1,0 +1,20 @@
+[
+  {
+    "headColor": "#FFD1A3",
+    "bodyColor": "#FF6B6B",
+    "author": "Ben",
+    "timestamp": "2024-01-15T12:00:00.000Z"
+  },
+  {
+    "headColor": "#F4A460",
+    "bodyColor": "#4A90E2",
+    "author": "Visitor1",
+    "timestamp": "2024-01-16T14:30:00.000Z"
+  },
+  {
+    "headColor": "#DEB887",
+    "bodyColor": "#50C878",
+    "author": "Anonymous",
+    "timestamp": "2024-01-17T09:15:00.000Z"
+  }
+]

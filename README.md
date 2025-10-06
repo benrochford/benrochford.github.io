@@ -30,3 +30,9 @@ I've been a Software Engineering Intern at Pegasystems and Shentel in the past. 
 <a href="https://bsky.app/profile/benrochford.com">Bluesky</a>
 
 `ben dot rochford at duke dot edu`
+
+---
+
+### Mii Plaza
+
+<iframe src="mii_plaza.html" width="100%" height="600" frameborder="0" style="border: none; max-width: 820px; display: block; margin: 20px auto;"></iframe>
