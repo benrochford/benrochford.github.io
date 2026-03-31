@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mii Plaza</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+
+        .mii-plaza-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .plaza-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .plaza-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .plaza {
+            background: linear-gradient(to bottom, #87CEEB 0%, #90EE90 100%);
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid #8B4513;
+        }
+
+        .mii-character {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mii-character:hover {
+            transform: scale(1.2);
+        }
+
+        .mii-head {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 5px;
+        }
+
+        .mii-eyes {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .mii-eye {
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .mii-mouth {
+            position: absolute;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 6px;
+            border: 2px solid #000;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .mii-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .character-creator {
+            padding: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .creator-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .creator-row {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .creator-label {
+            min-width: 120px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .color-picker {
+            width: 60px;
+            height: 35px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .creator-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .creator-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .create-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        .create-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .create-button:active {
+            transform: translateY(0);
+        }
+
+        .character-info {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 1000;
+            display: none;
+        }
+
+        @keyframes bop {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-10px) translateX(0); }
+        }
+
+        @keyframes walk {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        .small-text {
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mii-plaza-container">
+        <div class="plaza-header">
+            <h2>🎮 Mii Plaza 🎮</h2>
+        </div>
+
+        <div class="plaza" id="plaza">
+            <!-- Characters will be added here -->
+        </div>
+
+        <div class="character-creator">
+            <div class="creator-title">Create Your Mii</div>
+            
+            <div class="creator-row">
+                <label class="creator-label">Head Color:</label>
+                <input type="color" class="color-picker" id="headColor" value="#FFD1A3">
+            </div>
+
+            <div class="creator-row">
+                <label class="creator-label">Body Color:</label>
+                <input type="color" class="color-picker" id="bodyColor" value="#FF6B6B">
+            </div>
+
+            <div class="creator-row">
+                <label class="creator-label">Your Name:</label>
+                <input type="text" class="creator-input" id="authorName" placeholder="Enter your name (optional)">
+            </div>
+
+            <div class="small-text">💡 Your name is optional and will only be visible to the site owner</div>
+
+            <button class="create-button" onclick="createCharacter()">Add to Plaza</button>
+        </div>
+    </div>
+
+    <div class="character-info" id="charInfo"></div>
+
+    <script>
+        let characters = [];
+        const GITHUB_REPO = 'benrochford/benrochford.github.io';
+        const DATA_FILE = 'mii_plaza_data.json';
+
+        // Load characters from JSON file
+        async function loadCharacters() {
+            try {
+                const response = await fetch('mii_plaza_data.json?' + Date.now());
+                if (response.ok) {
+                    characters = await response.json();
+                    renderCharacters();
+                }
+            } catch (error) {
+                console.log('Could not load characters, starting fresh');
+            }
+        }
+
+        // Render all characters in the plaza
+        function renderCharacters() {
+            const plaza = document.getElementById('plaza');
+            plaza.innerHTML = '';
+            
+            characters.forEach((char, index) => {
+                createCharacterElement(char, index);
+            });
+        }
+
+        // Create a character DOM element
+        function createCharacterElement(char, index) {
+            const plaza = document.getElementById('plaza');
+            const charEl = document.createElement('div');
+            charEl.className = 'mii-character';
+            
+            // Random starting position
+            const startX = Math.random() * (plaza.offsetWidth - 50);
+            const startY = Math.random() * (plaza.offsetHeight - 70);
+            charEl.style.left = startX + 'px';
+            charEl.style.top = startY + 'px';
+            
+            charEl.innerHTML = `
+                <div class="mii-head" style="background-color: ${char.headColor}">
+                    <div class="mii-eyes">
+                        <div class="mii-eye"></div>
+                        <div class="mii-eye"></div>
+                    </div>
+                    <div class="mii-mouth"></div>
+                </div>
+                <div class="mii-body" style="background-color: ${char.bodyColor}"></div>
+            `;
+            
+            // Add bopping animation
+            const bopDuration = 1 + Math.random() * 1;
+            charEl.style.animation = `bop ${bopDuration}s ease-in-out infinite`;
+            charEl.style.animationDelay = `${Math.random() * 1}s`;
+            
+            // Add hover tooltip
+            charEl.addEventListener('mouseenter', (e) => {
+                const info = document.getElementById('charInfo');
+                info.textContent = `Character #${index + 1}${char.author ? ' by ' + char.author : ''}`;
+                info.style.display = 'block';
+                updateTooltipPosition(e);
+            });
+            
+            charEl.addEventListener('mousemove', updateTooltipPosition);
+            
+            charEl.addEventListener('mouseleave', () => {
+                document.getElementById('charInfo').style.display = 'none';
+            });
+            
+            plaza.appendChild(charEl);
+            
+            // Random movement
+            moveCharacterRandomly(charEl);
+        }
+
+        function updateTooltipPosition(e) {
+            const info = document.getElementById('charInfo');
+            info.style.left = (e.pageX + 10) + 'px';
+            info.style.top = (e.pageY - 30) + 'px';
+        }
+
+        function moveCharacterRandomly(charEl) {
+            const plaza = document.getElementById('plaza');
+            
+            function move() {
+                const currentX = parseFloat(charEl.style.left);
+                const currentY = parseFloat(charEl.style.top);
+                
+                const newX = Math.max(0, Math.min(plaza.offsetWidth - 50, currentX + (Math.random() - 0.5) * 50));
+                const newY = Math.max(0, Math.min(plaza.offsetHeight - 70, currentY + (Math.random() - 0.5) * 50));
+                
+                charEl.style.transition = 'left 2s ease, top 2s ease';
+                charEl.style.left = newX + 'px';
+                charEl.style.top = newY + 'px';
+                
+                setTimeout(move, 2000 + Math.random() * 3000);
+            }
+            
+            setTimeout(move, Math.random() * 2000);
+        }
+
+        // Create a new character
+        function createCharacter() {
+            const headColor = document.getElementById('headColor').value;
+            const bodyColor = document.getElementById('bodyColor').value;
+            const author = document.getElementById('authorName').value.trim();
+            
+            const newChar = {
+                headColor: headColor,
+                bodyColor: bodyColor,
+                author: author || 'Anonymous',
+                timestamp: new Date().toISOString()
+            };
+            
+            characters.push(newChar);
+            
+            // Save to localStorage as a backup (since we can't write to GitHub directly)
+            localStorage.setItem('miiPlazaCharacters', JSON.stringify(characters));
+            
+            // Create the character element
+            createCharacterElement(newChar, characters.length - 1);
+            
+            // Show success message
+            alert('Character added to the plaza! 🎉\n\nNote: To persist characters permanently, the site owner needs to update mii_plaza_data.json with the data from localStorage.');
+            
+            // Log the data for the owner to add
+            console.log('Add this to mii_plaza_data.json:');
+            console.log(JSON.stringify(characters, null, 2));
+            
+            // Reset form
+            document.getElementById('authorName').value = '';
+        }
+
+        // Try to load from localStorage first, then from file
+        function init() {
+            const stored = localStorage.getItem('miiPlazaCharacters');
+            if (stored) {
+                try {
+                    characters = JSON.parse(stored);
+                    renderCharacters();
+                } catch (e) {
+                    console.error('Error parsing stored characters');
+                }
+            }
+            
+            // Also try to load from file
+            loadCharacters();
+        }
+
+        // Initialize on page load
+        init();
+    </script>
+</body>
+</html>
