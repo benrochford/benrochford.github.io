@@ -22,7 +22,7 @@ Formerly, I worked with the <a href="https://socweb.cc.gatech.edu">Social Dynami
 
 
 ### Background
-I've been a Software Engineering Intern at Pegasystems and Shentel in the past. My wife and I enjoy hiking and exploring new places around Durham together. I play flute, piano, percussion, and produce electronic music. I am an Eagle Scout.
+I worked in software engineering at Pegasystems and Shentel in the past. My wife and I enjoy hiking and exploring new places around Durham together. I play flute, piano, percussion, and produce electronic music. I am an Eagle Scout.
 
 
 ### Links + Contact
