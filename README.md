@@ -13,7 +13,7 @@
 I'm a Sociology Ph.D. candidate at Duke and a Computational Social Scientist. I did my undergrad in Computer Science at Georgia Tech. My work investigates the societal impacts of social technologies such as artificial intelligence and social media, to help build technologies that facilitate healthy individual experiences and a world that is less divided.
 
 <div style="text-align: center">
-    <img src="/assets/snow.jpeg" width='250' height='250' alt='Me' style='border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
+    <img src="/assets/headshot.png" width='250' height='250' alt='Me' style='border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
 </div>
 
 I am advised by <a href="https://www.chrisbail.net/">Chris Bail</a> and study with Duke's <a href="https://www.polarizationlab.com/">Polarization Lab</a>. I am the inaugural Graduate Fellow of Duke's <a href="https://scai.duke.edu/">Society-Centered AI Initiative</a>, and the lead program assistant for the <a href="https://sicss.io/">Summer Institutes in Computational Social Science</a> and Tech for Open Minds.
