@@ -1,9 +1,80 @@
-theme: jekyll-theme-hacker
+# Academic Pages — https://github.com/academicpages/academicpages.github.io
+locale: en-US
+site_theme: default
 title: Ben Rochford
-description: You're surfing the Ben-ternet!
+browser_title: "Ben Rochford | You're surfing the Ben-ternet!"
+title_separator: "|"
+name: Ben Rochford
+description: "Sociology Ph.D. candidate at Duke and Computational Social Scientist studying artificial intelligence, social media, and society."
+url: "https://benrochford.com"
+baseurl: ""
+repository: benrochford/benrochford.github.io
 
-avatar: "./assets/gbacat.png"
-round-avatar: false
+author:
+  avatar: /assets/headshot.png
+  name: Ben Rochford
+  bio: "Ph.D. Candidate in Sociology"
+  location: "Durham, NC"
+  employer: Duke University
+  email: ben.rochford@duke.edu
+  googlescholar: "https://scholar.google.com/citations?user=5stlo94AAAAJ"
+  github: benrochford
+  bluesky: benrochford.com
+  linkedin: ben-rochford
 
-social-network-links:
-    linkedin: ben-rochford
+breadcrumbs: false
+words_per_minute: 160
+future: false
+read_more: disabled
+comments:
+  provider: false
+analytics:
+  provider: false
+atom_feed:
+  hide: true
+og_image: "https://benrochford.com/assets/headshot.png"
+og_description: Ben Rochford
+
+include:
+  - _pages
+exclude:
+  - .bundle
+  - .github
+  - .sass-cache
+  - .jekyll-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - MII_PLAZA_README.md
+  - node_modules
+  - package.json
+  - scripts
+  - vendor
+
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+sass:
+  sass_dir: _sass
+  style: compressed
+permalink: /:categories/:title/
+timezone: America/New_York
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-gist
+  - jekyll-paginate
+  - jemoji
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  ignore:
+    envs: development

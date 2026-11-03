@@ -1,34 +1,34 @@
-<head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-</head>
+# Ben Rochford's website
 
-<div style="text-align: left; margin: 20px 0; font-size: 18px;">
-    <a href="{{ site.baseurl }}/" style="font-weight: bold;">Home</a> 
-    | 
-    <a href="{{ site.baseurl }}/cv">CV</a>
-</div>
+Personal academic website built with [Academic Pages](https://github.com/academicpages/academicpages.github.io), a Jekyll template based on Minimal Mistakes.
 
-# Hello! :)
+## Content
 
-I'm a Sociology Ph.D. candidate at Duke and a Computational Social Scientist. I also studied Computer Science at Georgia Tech. My work investigates the societal impacts of social technologies such as artificial intelligence and social media, to help build technologies that facilitate healthy individual experiences and a world that is less divided.
+- `index.md`: homepage, preserving the original introduction and background.
+- `cv.md`: CV page, embedding the existing PDF in `content/PDF/`.
+- `_config.yml`: profile, contact links, site settings, and theme selection.
+- `_data/navigation.yml`: header navigation.
+- `_sass/_custom.scss`: local style adjustments.
 
-<div style="text-align: center">
-    <img src="/assets/headshot.png" width='250' height='250' alt='Me' style='border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,.4); margin: 0 0 0 15px;'>
-</div>
+Existing dashboards, PDFs, and the Mii Plaza keep their original paths.
 
-I am advised by <a href="https://www.chrisbail.net/">Chris Bail</a> and study with Duke's <a href="https://www.polarizationlab.com/">Polarization Lab</a>. I am the inaugural Graduate Fellow of Duke's <a href="https://scai.duke.edu/">Society-Centered AI Initiative</a>, and the lead program assistant for the <a href="https://sicss.io/">Summer Institutes in Computational Social Science</a> and Tech for Open Minds.
+## Local preview
 
-Formerly, I worked with the <a href="https://socweb.cc.gatech.edu">Social Dynamics and Wellbeing Lab</a> under <a href="http://www.munmund.net">Professor Munmun De Choudhury</a> to explore disparities in mental health narratives using search engine data.
+Use Ruby 3.3 and Bundler. On a Mac with Homebrew Ruby, add it to the shell path first:
 
+```sh
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+bundle config set --local path vendor/bundle
+bundle install
+bundle exec jekyll serve --host 127.0.0.1 --port 4000 --livereload
+```
 
-### Background
-I worked in software engineering at Pegasystems and Shentel in the past. My wife and I enjoy hiking and exploring new places around Durham together. I play flute, piano, percussion, and produce electronic music. I am an Eagle Scout.
+Open <http://localhost:4000>. Content and style edits rebuild automatically; restart after changing `_config.yml`.
 
+## Template source
 
-### Links + Contact
-<a href="https://www.linkedin.com/in/ben-rochford/">LinkedIn</a>
-<a href="https://bsky.app/profile/benrochford.com">Bluesky</a>
+Theme files were imported from Academic Pages commit `9e19e6318817bd3a6060a76d5af98124d394f3a0`. Its MIT license is retained in `LICENSE`. Demo pages and sample biographies were omitted.
 
-`ben dot rochford at duke dot edu`
+The supplied JavaScript sources are bundled in `assets/js/main.min.js` (unminified for review). After editing them, regenerate the bundle with `node scripts/build-js.mjs`.
 
----
+The Pages workflow uses the same Jekyll build as the local preview. When ready to publish, select **GitHub Actions** as the source in the repository's **Settings → Pages**. The local migration itself does not publish anything.
